@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/Hedronium/node-jables/issues"
   },
-  "homepage": "https://github.com/Hedronium/node-jables#readme"
+  "homepage": "https://github.com/Hedronium/node-jables#readme",
+  "dependencies": {
+    "cli-color": "^1.1.0",
+    "commander": "^2.9.0"
+  },
+  "bin": {
+    "node-jables": "./index.js"
+  }
 }
