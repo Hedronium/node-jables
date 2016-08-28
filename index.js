@@ -9,9 +9,8 @@ program
 program
    .command('setup')
    .description('Setup files for writing migration')
-   .action(function() {
-         
-         console.log();
+   .action(() => {
+            
 
    });
 
@@ -19,16 +18,14 @@ program
 program
    .command('make:migration [option]')
    .description('Creates a json file')
-   .action(function(option) {
-         
-         console.log(option);
-
+   .action((option) => {
+            
    });
 
 program
    .command('migrate')
    .description('Read schemas from json and then creates json')
-   .action(function() {
+   .action(() => {
          
 
 
@@ -38,7 +35,7 @@ program
 program
    .command('migrate:refresh')
    .description('Deletes current migration and reload it again')
-   .action(function() {
+   .action(() => {
          
 
    });
@@ -46,49 +43,28 @@ program
 program
    .command('migration:rollback')
    .description('To rollback the latest migration operation, you may use the rollback command. This command rolls back the last "batch" of migrations, which may include multiple migration files')
-   .action(function() {
+   .action(() => {
          
-         console.log();
+
 
    });
+
 program
    .command('migration:reset')
    .description('The migrate:reset command will roll back all of your application\'s migrations')
-   .action(function() {
+   .action(() => {
          
-         console.log();
 
    });
 
-/*
 
 program
-   .arguments('<cmd>')
-   .action(function(cmd) {
-      
-      switch (cmd) {
-
-         case 'setup':
-            break;
-         case 'create':
-            break;
-         case 'make:migration':
-            break;
-         case 'migrate':
-            break;
-         case 'migration:refresh':
-            break;
-         case 'migration:rollback':
-            break;
-         case 'migration:rest':
-            break;
-         default:
-            console.log('wrong command');
-            break;
-
-      }      
+   .command('migration:undo')
+   .description('The migrate:reset command will roll back all of your application\'s migrations')
+   .action(() => {
+         
 
    });
- */
+
 
 program.parse(process.argv);
