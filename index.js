@@ -1,6 +1,9 @@
+'use strict'
 #!/usr/bin/env node
 const program  = require('commander');
+const Process  = require('./lib/Process');
 
+var ProcessStore = new Process;
 
 program
    .version('0.1.0')
@@ -10,16 +13,15 @@ program
    .command('setup')
    .description('Setup files for writing migration')
    .action(() => {
-            
-
+         
    });
 
 
 program
    .command('make:migration [option]')
-   .description('Creates a json file')
+   .description('Creates a json file into migration folder')
    .action((option) => {
-            
+         console.log(option);
    });
 
 program
@@ -27,8 +29,6 @@ program
    .description('Read schemas from json and then creates json')
    .action(() => {
          
-
-
    });
 
 
@@ -37,7 +37,6 @@ program
    .description('Deletes current migration and reload it again')
    .action(() => {
          
-
    });
 
 program
@@ -45,8 +44,6 @@ program
    .description('To rollback the latest migration operation, you may use the rollback command. This command rolls back the last "batch" of migrations, which may include multiple migration files')
    .action(() => {
          
-
-
    });
 
 program
@@ -54,7 +51,6 @@ program
    .description('The migrate:reset command will roll back all of your application\'s migrations')
    .action(() => {
          
-
    });
 
 
@@ -63,7 +59,6 @@ program
    .description('The migrate:reset command will roll back all of your application\'s migrations')
    .action(() => {
          
-
    });
 
 
