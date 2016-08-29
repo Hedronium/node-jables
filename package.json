@@ -30,6 +30,6 @@
     "commander": "^2.9.0"
   },
   "bin": {
-    "node-jables": "./node-jables/index.js"
+    "node-jables": "./index.js"
   }
 }

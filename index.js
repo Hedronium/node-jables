@@ -1,10 +1,9 @@
-'use strict'
 #!/usr/bin/env node
-const program  = require('commander');
-const Process  = require('./lib/Process');
+const program    = require('commander');
+const Process    = require('./lib/Process');
+const path  = process.cwd();
 
-var ProcessStore = new Process;
-
+const ObProcess = new Process;
 program
    .version('0.1.0')
    .usage('<command>')
@@ -13,7 +12,8 @@ program
    .command('setup')
    .description('Setup files for writing migration')
    .action(() => {
-         
+      
+         ObProcess.setup(path);
    });
 
 
@@ -21,7 +21,7 @@ program
    .command('make:migration [option]')
    .description('Creates a json file into migration folder')
    .action((option) => {
-         console.log(option);
+
    });
 
 program
