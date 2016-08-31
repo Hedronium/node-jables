@@ -3,7 +3,8 @@ const program    = require('commander');
 const Process    = require('./lib/Process');
 const path  = process.cwd();
 
-const ObProcess = new Process;
+const ObProcess = new Process(path);
+
 program
    .version('0.1.0')
    .usage('<command>')
@@ -13,15 +14,15 @@ program
    .description('Setup files for writing migration')
    .action(() => {
       
-         ObProcess.setup(path);
+         ObProcess.setup();
    });
 
 
 program
-   .command('make:migration [option]')
+   .command('make:migration [file_name]')
    .description('Creates a json file into migration folder')
-   .action((option) => {
-
+   .action((file_name) => {
+      ObProcess.make_migration(file_name);
    });
 
 program
