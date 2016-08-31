@@ -14,7 +14,7 @@ program
    .description('Setup files for writing migration')
    .action(() => {
       
-         ObProcess.setup();
+         ObProcess.setup_start();
    });
 
 
@@ -62,5 +62,11 @@ program
          
    });
 
+program
+   .command('cache:clear')
+   .description('The cache:clear command clear cache files.')
+   .action(() => {
+         
+   });
 
 program.parse(process.argv);
