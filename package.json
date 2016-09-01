@@ -28,7 +28,8 @@
   "dependencies": {
     "cli-color": "^1.1.0",
     "commander": "^2.9.0",
-    "file-system": "^2.2.1"
+    "file-system": "^2.2.1",
+    "json-lint": "^0.1.0"
   },
   "bin": {
     "node-jables": "./index.js"

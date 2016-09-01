@@ -32,7 +32,8 @@ program
    .command('migrate')
    .description('Read schemas from json and then creates json')
    .action(() => {
-         
+      
+         ObProcess.migrate();
    });
 
 
