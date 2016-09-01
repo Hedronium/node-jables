@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict'
 const program    = require('commander');
 const Process    = require('./lib/Process');
 const path  = process.cwd();
@@ -22,7 +23,9 @@ program
    .command('make:migration [file_name]')
    .description('Creates a json file into migration folder')
    .action((file_name) => {
+            
       ObProcess.make_migration(file_name);
+
    });
 
 program
