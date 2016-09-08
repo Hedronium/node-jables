@@ -8,14 +8,19 @@
 			
 				"properties": {
 
-					"^.*$": { "type":"string" },
-
-                    "length": { "type":"integer" },
-                    "auto-increment": { "type": "boolean" }
+					"*": {
+						
+						"type":"object",
+						"properties": {
+							"primary": { "type":"boolean" },
+							"auto-increment": { "type":"boolean" },
+							"length": { "type":"number" },
+							"unique": {"type": "boolean" },
+							"description": { "type":"string" }
+						}	
+					}
 				
-				},
-			
-			"additionalProperties":false
+				}
 		},
 
 		"foreign": {
@@ -59,10 +64,10 @@
 
 		 "description": {
 
-		 	"type":"string",
+		 	"type":"string"
 
 		 }
 	},
-
-	"additionalProperties": false
+	"additionalProperties": false,
+	"required": ["fields"]
 }
