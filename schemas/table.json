@@ -5,9 +5,11 @@
 
 		"fields":{
 			"type":"object",
+			
 				"properties": {
 
-					"name": {"type":"string"},
+					"^.*$": { "type":"string" },
+
                     "length": { "type":"integer" },
                     "auto-increment": { "type": "boolean" }
 				
@@ -17,12 +19,49 @@
 		},
 
 		"foreign": {
+
 			"type":"object",
+            
              "properties": {
-             		"keys": {"type":"arary"}
+
+             		"table": { "type":"array" }
              },
+			
 			"additionalProperties":false		 
-		}
+		},
+
+		"unique": {
+			 "type":"object",
+			 "properties": {
+
+			 	"table": { "type": "array" }
+			 
+			 },
+			 "additionalProperties":false
+		},
+
+		"primary": {
+			
+			 "type":"object",
+			 "properties": {
+
+			 		"table": { "type":"array" }
+
+			 },
+			 "additionalProperties":false
+		 },
+		 
+		 "title": {
+
+	 		"type":"string"
+		 
+		 },
+
+		 "description": {
+
+		 	"type":"string",
+
+		 }
 	},
 
 	"additionalProperties": false
