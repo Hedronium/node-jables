@@ -1,10 +1,29 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"type":"object",
+	"properties": {
 
-		"field":{
+		"fields":{
+			"type":"object",
+				"properties": {
 
-				"type":"object",
-				"additionalProperties":false
+					"name": {"type":"string"},
+                    "length": { "type":"integer" },
+                    "auto-increment": { "type": "boolean" }
+				
+				},
+			
+			"additionalProperties":false
+		},
+
+		"foreign": {
+			"type":"object",
+             "properties": {
+             		"keys": {"type":"arary"}
+             },
+			"additionalProperties":false		 
 		}
+	},
+
+	"additionalProperties": false
 }
